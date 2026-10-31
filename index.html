@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#090d13">
+<title>COMANDO GLOBAL — Guerra pelo Planeta</title>
+<meta name="description" content="Comande uma nação, construa sua base, treine exércitos e conquiste 18 setores em um jogo de estratégia de guerra no navegador.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0f16'/%3E%3Cpath d='M32 8 50 20v18L32 56 14 38V20z' fill='none' stroke='%23f2a63b' stroke-width='3'/%3E%3Cpath d='M32 20l4 9 10 1-8 6 2 10-8-5-8 5 2-10-8-6 10-1z' fill='%23f2a63b'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3z"/></symbol>
+<symbol id="i-map" viewBox="0 0 24 24"><path d="m9 3-6 2v16l6-2 6 2 6-2V3l-6 2-6-2z"/><path d="M9 3v16M15 5v16"/></symbol>
+<symbol id="i-army" viewBox="0 0 24 24"><path d="M4 14a8 8 0 0 1 16 0"/><path d="M3 14h18v3H3zM8 20h8"/><path d="M12 6v4"/></symbol>
+<symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v5L5.2 19a2 2 0 0 0 1.9 3h9.8a2 2 0 0 0 1.9-3L14 8V3"/><path d="M7.5 15h9"/></symbol>
+<symbol id="i-medal" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-2 8 5.5-3 5.5 3-2-8"/><path d="m12 5.5 1.1 2.2 2.4.3-1.8 1.7.5 2.4-2.2-1.2-2.2 1.2.5-2.4-1.8-1.7 2.4-.3z"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c.4-4 3-6 6.5-6s6.1 2 6.5 6"/><path d="M16 5.5a3.2 3.2 0 0 1 0 6M18 14.5c2.4.4 3.7 2.2 4 5.5"/></symbol>
+<symbol id="i-sword" viewBox="0 0 24 24"><path d="m14 4 6-1-1 6-9 9-4-4z"/><path d="m5 15-2 2 4 4 2-2M3.5 20.5l2-2"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.5 20 5v7c0 5-3.4 8-8 9.5C7.4 20 4 17 4 12V5z"/><path d="m8.5 12 2.3 2.3 4.7-5"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/><path d="M12 1v4M12 19v4M1 12h4M19 12h4"/></symbol>
+<symbol id="i-oil" viewBox="0 0 24 24"><path d="M12 2.5s6.2 6.7 6.2 11.2A6.2 6.2 0 0 1 5.8 13.7C5.8 9.2 12 2.5 12 2.5z"/><path d="M9.2 15.2a2.9 2.9 0 0 0 2.8 2.4"/></symbol>
+<symbol id="i-steel" viewBox="0 0 24 24"><path d="m3 8 9-5 9 5-9 5z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></symbol>
+<symbol id="i-food" viewBox="0 0 24 24"><path d="M12 22V7"/><path d="M12 10c0-3 2-5 5-5 0 3-2 5-5 5zM12 14c0-3 2-5 5-5 0 3-2 5-5 5zM12 10c0-3-2-5-5-5 0 3 2 5 5 5zM12 14c0-3-2-5-5-5 0 3 2 5 5 5z"/></symbol>
+<symbol id="i-credit" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 8.5a4 4 0 1 0 0 7M7 12h6"/></symbol>
+<symbol id="i-gem" viewBox="0 0 24 24"><path d="m7 3-4 6 9 12 9-12-4-6z"/><path d="M3 9h18M9 3l3 18 3-18"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.3l3.5 2"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12.5 5 5L20 6"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 15v2"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+<symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4v-.2a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.6v-.2h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1z"/></symbol>
+<symbol id="i-volume" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/></symbol>
+<symbol id="i-mute" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="m16 9 5 5M21 9l-5 5"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3.5 6 8.5 7 8.5-7"/></symbol>
+<symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 22V3M5 4h13l-2.5 4L18 12H5"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9z"/></symbol>
+<symbol id="i-crown" viewBox="0 0 24 24"><path d="m3 7 5 4 4-7 4 7 5-4-2 12H5z"/><path d="M5 19h14"/></symbol>
+<symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.7 7-12a7 7 0 1 0-14 0c0 5.3 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+<symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 6h11v11H2zM13 9h5l3 4v4h-8"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><path d="M12 20V4M6 10l6-6 6 6"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.8v.4"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="i-fire" viewBox="0 0 24 24"><path d="M12 22c4 0 7-2.7 7-6.5 0-4.5-4.6-6.7-4.2-11.5-3 1-4.3 3.8-3.3 6.2-1.4-.4-2.2-1.4-2.7-2.7C7 9.4 5 11.5 5 15.5 5 19.3 8 22 12 22z"/></symbol>
+<symbol id="i-radar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12 19 5M12 3v2M21 12h-2M12 21v-2M3 12h2"/></symbol>
+</defs>
+</svg>
+
+<div id="app">
+
+  <!-- ============ TITLE SCREEN ============ -->
+  <section id="title-screen" aria-label="Tela inicial">
+    <canvas id="title-canvas" aria-hidden="true"></canvas>
+    <div class="title-vignette"></div>
+    <div class="title-grid" aria-hidden="true"></div>
+
+    <div class="title-top">
+      <div class="title-mark">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3 42 14v20L24 45 6 34V14z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M24 11 34 17v14L24 37 14 31V17z" fill="none" stroke="currentColor" stroke-width=".8" opacity=".5"/><path d="m24 15 2.4 5.6 6 .6-4.5 4 1.3 5.9-5.2-3.1-5.2 3.1 1.3-5.9-4.5-4 6-.6z" fill="currentColor"/></svg>
+        <span>OMG COMMAND</span>
+      </div>
+      <div class="title-status"><i></i> SERVIDOR GLOBAL ONLINE <b id="title-players">12.847</b></div>
+    </div>
+
+    <div class="title-content">
+      <p class="title-kicker">A GUERRA PELO PLANETA COMEÇOU</p>
+      <h1 class="title-logo">
+        <span class="logo-small">COMANDO</span>
+        <span class="logo-big">GLOBAL</span>
+      </h1>
+      <div class="title-rule"><span></span><i></i><span></span></div>
+      <p class="title-sub">Construa sua fortaleza. Mobilize exércitos. Domine 18 setores.<br>Um único comandante decidirá o destino do planeta.</p>
+
+      <button class="btn btn-hero" id="btn-start" aria-label="Play">
+        <span class="btn-sheen"></span>
+        <svg class="ico"><use href="#i-sword"/></svg>
+        <span id="start-label">ENTRAR NA GUERRA</span>
+        <svg class="ico ico-arrow"><use href="#i-arrow"/></svg>
+      </button>
+      <p class="title-save" id="title-save"><svg class="ico"><use href="#i-shield"/></svg> Progresso salvo neste dispositivo</p>
+    </div>
+
+    <div class="title-footer">
+      <div class="title-stat"><b>18</b><span>SETORES</span></div>
+      <div class="title-stat"><b>4</b><span>FACÇÕES</span></div>
+      <div class="title-stat"><b>28</b><span>UNIDADES E EDIFÍCIOS</span></div>
+      <div class="title-stat"><b>∞</b><span>ESTRATÉGIAS</span></div>
+      <div class="title-credit">ESTRATÉGIA DE GUERRA EM TEMPO REAL · JOGUE NO NAVEGADOR</div>
+    </div>
+
+    <div class="title-scan" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============ GAME SHELL ============ -->
+  <div id="game" hidden>
+    <header id="hud">
+      <div class="hud-player">
+        <div class="avatar-hex" id="hud-avatar">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4 56 18v28L32 60 8 46V18z" fill="url(#av-grad)"/><path d="M32 16 43 23v13L32 43 21 36V23z" fill="#0b1119" opacity=".55"/><path d="m32 21 5 10 11 1-8 7 2 11-10-5-10 5 2-11-8-7 11-1z" fill="#f5b552"/></svg>
+          <span class="level-badge" id="hud-level">5</span>
+          <i class="online-dot"></i>
+        </div>
+        <div class="hud-id">
+          <strong id="hud-name">COMANDANTE</strong>
+          <span><svg class="ico"><use href="#i-sword"/></svg> <b id="hud-power">0</b> PODER</span>
+        </div>
+      </div>
+
+      <div class="hud-resources" id="hud-resources"></div>
+
+      <div class="hud-actions">
+        <div class="hud-energy" id="hud-energy" title="Energia da base">
+          <svg class="ico"><use href="#i-bolt"/></svg><b>0</b>
+        </div>
+        <button class="hud-btn" data-action="toggle-sound" title="Som" aria-label="Som"><svg class="ico" id="sound-icon"><use href="#i-volume"/></svg></button>
+        <button class="hud-btn" data-action="open-reports" title="Relatórios" aria-label="Relatórios"><svg class="ico"><use href="#i-mail"/></svg><span class="badge" id="report-badge">0</span></button>
+        <button class="hud-btn" data-action="open-settings" title="Configurações" aria-label="Configurações"><svg class="ico"><use href="#i-gear"/></svg></button>
+      </div>
+    </header>
+
+    <nav id="rail" aria-label="Navegação principal">
+      <button class="rail-btn active" data-view="base"><svg class="ico"><use href="#i-home"/></svg><span>BASE</span><i></i></button>
+      <button class="rail-btn" data-view="world"><svg class="ico"><use href="#i-map"/></svg><span>MUNDO</span><i></i></button>
+      <button class="rail-btn" data-view="army"><svg class="ico"><use href="#i-army"/></svg><span>EXÉRCITO</span><i></i></button>
+      <button class="rail-btn" data-view="research"><svg class="ico"><use href="#i-flask"/></svg><span>PESQUISA</span><i></i></button>
+      <button class="rail-btn" data-view="hero"><svg class="ico"><use href="#i-medal"/></svg><span>HERÓI</span><i></i></button>
+      <button class="rail-btn" data-view="campaign"><svg class="ico"><use href="#i-flag"/></svg><span>CAMPANHA</span><i></i></button>
+      <button class="rail-btn" data-view="alliance"><svg class="ico"><use href="#i-users"/></svg><span>ALIANÇA</span><i></i></button>
+      <div class="rail-spacer"></div>
+      <button class="rail-btn rail-more" data-action="open-more"><svg class="ico"><use href="#i-menu"/></svg><span>MAIS</span></button>
+    </nav>
+
+    <main id="main">
+      <section class="view active" id="view-base">
+        <div class="stage-frame">
+          <canvas id="base-canvas" aria-label="Base militar isométrica"></canvas>
+          <div class="stage-top">
+            <div class="stage-title"><span class="stage-dot"></span><div><small>ZONA DE OPERAÇÕES</small><b>SETOR 07 · FORTALEZA ÔMEGA</b></div></div>
+            <div class="stage-legend">
+              <span><i class="lg lg-allied"></i>ALIADO</span>
+              <span><i class="lg lg-hostile"></i>HOSTIL</span>
+              <span><i class="lg lg-energy"></i>ENERGIA</span>
+            </div>
+          </div>
+          <div class="stage-hint" id="base-hint">CLIQUE EM UM EDIFÍCIO PARA COMANDAR</div>
+          <div class="stage-compass" aria-hidden="true"><i></i><b>N</b></div>
+          <div class="canvas-fx" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-world">
+        <div class="stage-frame world-frame">
+          <canvas id="world-canvas" aria-label="Mapa mundial de guerra"></canvas>
+          <div id="world-markers"></div>
+          <div class="stage-top">
+            <div class="stage-title"><span class="stage-dot red"></span><div><small>TEATRO DE GUERRA</small><b>MAPA MUNDIAL · 18 SETORES</b></div></div>
+            <div class="world-legend">
+              <span><i class="lg lg-allied"></i>DOMINADO</span>
+              <span><i class="lg lg-hostile"></i>INIMIGO</span>
+              <span><i class="lg lg-neutral"></i>NEUTRO</span>
+            </div>
+          </div>
+          <div class="world-hud">
+            <div><small>DOMÍNIO MUNDIAL</small><b id="world-dom">0%</b><div class="mini-bar"><i id="world-dom-bar"></i></div></div>
+            <div><small>TRIBUTO DE GUERRA</small><b id="world-tribute">+0%/h</b></div>
+          </div>
+          <div class="world-controls">
+            <button class="map-btn" data-action="world-center" title="Centralizar"><svg class="ico"><use href="#i-target"/></svg></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="view panel-view" id="view-army"></section>
+      <section class="view panel-view" id="view-research"></section>
+      <section class="view panel-view" id="view-campaign"></section>
+      <section class="view panel-view" id="view-hero"></section>
+      <section class="view panel-view" id="view-alliance"></section>
+    </main>
+
+    <aside id="context" aria-label="Painel de comando"></aside>
+
+    <footer id="dock"></footer>
+
+    <div id="chat-feed" aria-hidden="true"></div>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toasts" aria-live="polite"></div>
+  <div id="battle-root" hidden></div>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
